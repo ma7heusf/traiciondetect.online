@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="fr-FR"><head>
 	
-    <script src="js/latest_1.js" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script async="" src="js/gtm.js"></script><script src="js/latest_1.js" data-utmify-prevent-subids="" async="" defer=""></script>
 <script>
   window.pixelId = "687a882fe940d55056f14b0f";
   var a = document.createElement("script");
@@ -8,7 +8,7 @@
   a.setAttribute("defer", "");
   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
   document.head.appendChild(a);
-</script>
+</script><script async="" defer="" src="js/pixel.js"></script>
 	<meta charset="UTF-8">
 		<title>Step3  Affair Detect</title>
 <meta name="robots" content="max-image-preview:large">
@@ -109,7 +109,346 @@ document.addEventListener('DOMContentLoaded', function() {
 					}
 				}
 			</style>
-				<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"></head>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><script src="js/wp-emoji-release.min.js" defer=""></script><style>
+
+.congrats-show {
+            position: fixed;
+            top: 50%;
+            left: 40%;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            animation: fadeIn 0.5s ease-out;
+            z-index: 1001;
+            text-align: center;
+            border: 2px solid #f97316;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+/* Roleta Interativa TEMU - Estilos */
+.roulette-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.roulette-overlay.hidden {
+    display: none;
+}
+
+.roulette-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.roulette-wheel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.5);
+    border: 5px solid #ff6b35;
+    transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    color: rgb(34, 34, 34);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.segment-1 {
+    background: #ffbe8c;
+    transform: rotate(0deg);
+}
+
+.segment-2 {
+    background: #e29755;
+    transform: rotate(90deg);
+}
+
+.segment-3 {
+    background: #ffab66;
+    transform: rotate(180deg);
+}
+
+.segment-4 {
+    background: #db6402;
+    transform: rotate(270deg);
+    box-shadow: 0 0 20px rgba(219, 100, 2, 0.6);
+}
+
+.segment-text {
+    transform: rotate(-45deg);
+    font-size: 18px;
+    line-height: 1.2;
+    padding: 5px;
+}
+
+.roulette-pointer {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid #d84e1c;
+    z-index: 10;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.spin-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #e97102, #b45802);
+    color: white;
+    border: 3px solid #ff6b35;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spin-button:hover {
+    background: linear-gradient(45deg, #34495e, #2c3e50);
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.spin-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modal de recompensas */
+.reward-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 15000;
+}
+
+.reward-modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #2c2c2c, #141414);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    animation: modalAppear 0.5s ease-out;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.reward-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.reward-value {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.multiplier {
+    font-size: 36px;
+    color: #ffd700;
+    font-weight: bold;
+    margin: 15px 0;
+    animation: bounce 0.8s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.final-cta {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.final-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cta-subtitle {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* Animações de destaque */
+.highlight {
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.8) !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .roulette-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .spin-button {
+        width: 60px;
+        height: 60px;
+        font-size: 12px;
+    }
+    
+    .segment-text {
+        font-size: 14px;
+    }
+    
+    .modal-content {
+        padding: 30px 20px;
+    }
+
+    .congrats-show {
+            position: fixed;
+            top: 40%;
+            left: 10%;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            animation: fadeIn 0.5s ease-out;
+            z-index: 1001;
+            text-align: center;
+            border: 2px solid #f97316;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    
+    .reward-value {
+        font-size: 36px;
+    }
+    
+    .multiplier {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .roulette-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .spin-button {
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
+    }
+    
+    .segment-text {
+        font-size: 12px;
+    }
+
+    .congrats-show {
+            position: fixed;
+            top: 40%;
+            left: 1%;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            animation: fadeIn 0.5s ease-out;
+            z-index: 1001;
+            text-align: center;
+            border: 2px solid #f97316;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    
+    .reward-value {
+        font-size: 28px;
+    }
+    
+    .multiplier {
+        font-size: 24px;
+    }
+}
+</style>
+</head>
 <body class="page-template page-template-elementor_canvas page page-id-255 elementor-default elementor-template-canvas elementor-kit-8 elementor-page elementor-page-255">
 	<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPN4TNFJ"
@@ -122,7 +461,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KX64NV7T');</script>
 <!-- End Google Tag Manager -->
 		<div data-elementor-type="wp-page" data-elementor-id="255" class="elementor elementor-255" data-elementor-post-type="page">
-				<div class="elementor-element elementor-element-2be2d0c9 e-flex e-con-boxed e-con e-parent" data-id="2be2d0c9" data-element_type="container">
+				<div class="elementor-element elementor-element-2be2d0c9 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="2be2d0c9" data-element_type="container">
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-329d2f3 elementor-widget elementor-widget-html" data-id="329d2f3" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
@@ -165,7 +504,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				</div>
 					</div>
 				</div>
-		<div class="elementor-element elementor-element-408499ef e-con-full e-flex e-con e-parent" data-id="408499ef" data-element_type="container">
+		<div class="elementor-element elementor-element-408499ef e-con-full e-flex e-con e-parent e-lazyloaded" data-id="408499ef" data-element_type="container">
 		<div class="elementor-element elementor-element-1c3b6599 e-con-full e-flex e-con e-child" data-id="1c3b6599" data-element_type="container" data-settings="{" background_background":"classic"}"="">
 				<div class="elementor-element elementor-element-438c5045 elementor-widget elementor-widget-text-editor" data-id="438c5045" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
@@ -221,8 +560,8 @@ encontró <br>los siguientes datos...</p>
   
   
   <div class="container-html">
-	<img decoding="async" class="photo-user" src="" alt="">
-	<p class="tel-text"></p>
+	<img decoding="async" class="photo-user" src="images/3da39-no-user-image-icon-27.png" alt="">
+	<p class="tel-text">+5563981538862</p>
   </div>
   
   <script>
@@ -565,7 +904,9 @@ simbólica para mantener nuestro sistema en funcionamiento.</h2>		</div>
 													<img loading="lazy" decoding="async" width="404" height="1024" src="images/Frances-404x1024.webp" class="attachment-large size-large wp-image-847" alt="" srcset="images/Frances-404x1024.webp 404w, images/Frances-118x300.webp 118w, images/Frances-768x1947.webp 768w, images/Frances-606x1536.webp 606w, images/Frances.webp 781w" sizes="(max-width: 404px) 100vw, 404px">													</div>
 				</div>
 				</div>
-		<div class="elementor-element elementor-element-1d01e314 e-con-full e-flex e-con e-child" data-id="1d01e314" data-element_type="container" data-settings="{" background_background":"classic"}"="">
+
+
+		<div class="elementor-element elementor-element-1d01e314 e-con-full e-flex e-con e-child" data-id="1d01e314" data-element_type="container" data-settings="{" background_background":"classic"}">
 				<div class="elementor-element elementor-element-7cce30dc elementor-widget elementor-widget-heading" data-id="7cce30dc" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 			<h2 class="elementor-heading-title elementor-size-default">SOLO HOY </h2>		</div>
@@ -584,10 +925,37 @@ simbólica para mantener nuestro sistema en funcionamiento.</h2>		</div>
 									
 			
 							<div class="elementor-price-table__footer">
-											<a class="elementor-price-table__button elementor-button elementor-size-md" href="https://go.hotmart.com/Q101529111T?ap=5397">
-							✅  PAGAR TARIFA Y DESCARGAR ARCHIVOS	</a>
-					
-									</div>
+                <h2 class="original-price"> $95 </h2>
+				<!-- Título da roleta -->
+				<h3 class="roulette-title">Gira la ruleta y consigue descuentos de hasta 80% para descargar los archivos</h3>
+				
+				<!-- Container da roleta (substitui botão verde) -->
+				<div class="roulette-container">
+					<div class="roulette-wheel" id="roulette-wheel">
+						<!-- 4 segmentos da roleta com tamanhos diferentes -->
+						<div class="segment segment-1" data-angle="126">SIN DESCUENTO</div>
+						<div class="segment segment-2" data-angle="108">20% DE DESCUENTO</div>
+						<div class="segment segment-3" data-angle="90">30% DE DESCUENTO</div>
+						<div class="segment segment-4 winner-segment" data-angle="36">80% DE DESCUENTO</div>
+					</div>
+					<div class="roulette-pointer"></div>
+					<button class="spin-button" id="spin-button">GIRAR</button>
+				</div>
+				
+				<!-- Popup modal para mostrar desconto -->
+				<div class="discount-modal hidden" id="discount-modal">
+					<div class="modal-content">
+						<h2>¡80% DE DESCUENTO APLICADO!</h2>
+						<div class="price-calculation">
+							<div class="original-price">Precio original: <span class="crossed">95.00$</span></div>
+							<div class="discount-price">Con descuento: <span class="highlight">19$</span></div>
+							<div class="savings">Ahorras: <span class="save-amount">76$</span></div>
+						</div>
+						<button class="download-btn" onclick="window.location.href='https://go.hotmart.com/Q101529111T?ap=5397'">DESCARGAR ARCHIVOS AHORA</button>
+						<div class="timer">Oferta válida por <span id="countdown">15:00</span> minutos</div>
+					</div>
+				</div>
+								</div>
 					</div>
 
 				</div>
@@ -611,6 +979,10 @@ simbólica para mantener nuestro sistema en funcionamiento.</h2>		</div>
 				<div class="elementor-element elementor-element-ca9a7ff elementor-widget elementor-widget-video" data-id="ca9a7ff" data-element_type="widget" data-settings="{" video_type":"vimeo"}"="" data-widget_type="video.default">
 				<div class="elementor-widget-container">
 			<style>/*! elementor - v3.23.0 - 25-07-2024 */
+            .original-price {
+                font-size: 3rem;
+                color: #ea580c;
+            }
 .elementor-widget-video .elementor-widget-container{overflow:hidden;transform:translateZ(0)}.elementor-widget-video .elementor-wrapper{aspect-ratio:var(--video-aspect-ratio)}.elementor-widget-video .elementor-wrapper iframe,.elementor-widget-video .elementor-wrapper video{height:100%;width:100%;display:flex;border:none;background-color:#000}@supports not (aspect-ratio:1/1){.elementor-widget-video .elementor-wrapper{position:relative;overflow:hidden;height:0;padding-bottom:calc(100% / var(--video-aspect-ratio))}.elementor-widget-video .elementor-wrapper iframe,.elementor-widget-video .elementor-wrapper video{position:absolute;top:0;right:0;bottom:0;left:0}}.elementor-widget-video .elementor-open-inline .elementor-custom-embed-image-overlay{position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:50%}.elementor-widget-video .elementor-custom-embed-image-overlay{cursor:pointer;text-align:center}.elementor-widget-video .elementor-custom-embed-image-overlay:hover .elementor-custom-embed-play i{opacity:1}.elementor-widget-video .elementor-custom-embed-image-overlay img{display:block;width:100%;aspect-ratio:var(--video-aspect-ratio);-o-object-fit:cover;object-fit:cover;-o-object-position:center center;object-position:center center}@supports not (aspect-ratio:1/1){.elementor-widget-video .elementor-custom-embed-image-overlay{position:relative;overflow:hidden;height:0;padding-bottom:calc(100% / var(--video-aspect-ratio))}.elementor-widget-video .elementor-custom-embed-image-overlay img{position:absolute;top:0;right:0;bottom:0;left:0}}.elementor-widget-video .e-hosted-video .elementor-video{-o-object-fit:cover;object-fit:cover}.e-con-inner>.elementor-widget-video,.e-con>.elementor-widget-video{width:var(--container-widget-width);--flex-grow:var(--container-widget-flex-grow)}</style>		<div class="elementor-wrapper elementor-open-inline">
 			<iframe class="elementor-video-iframe" allowfullscreen="" allow="clipboard-write" title="Lecteur vidéo vimeo" src="https://player.vimeo.com/video/1004323171?color&autopause=0&loop=0&muted=0&title=0&portrait=0&byline=0#t="></iframe>		</div>
 				</div>
@@ -687,6 +1059,629 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 </script>
 <script src="js/frontend.min_1.js" id="elementor-frontend-js"></script>
 <script src="js/elements-handlers.min.js" id="pro-elements-handlers-js"></script>
+
+<script>
+// Roleta Interativa TEMU - JavaScript
+// Nova implementação da Roleta TEMU conforme especificações
+class TemuRoulette {
+    constructor() {
+        this.wheel = document.getElementById('roulette-wheel');
+        this.spinButton = document.getElementById('spin-button');
+        this.discountModal = document.getElementById('discount-modal');
+        this.countdownElement = document.getElementById('countdown');
+        this.isSpinning = false;
+        this.originalPrice = 95.00;
+        this.discountPercent = 80;
+        
+        this.init();
+    }
+    
+    init() {
+        // Substituir botão de pagamento pela roleta
+        this.replacePayButton();
+        
+        // Event listener para o botão de girar
+        this.spinButton.addEventListener('click', () => this.spinToWin());
+        
+        // Event listeners para touch em dispositivos móveis
+        this.spinButton.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            this.spinToWin();
+        });
+        
+        // Criar segmentos desiguais
+        this.createUnequalSegments();
+    }
+    
+    // Função para substituir o botão de pagamento pela roleta
+    replacePayButton() {
+        const payButton = document.querySelector('.elementor-price-table__button');
+        if (payButton) {
+            // Criar container da roleta
+            const rouletteSection = document.createElement('div');
+            rouletteSection.className = 'roulette-section';
+            rouletteSection.innerHTML = `
+                <h3 class="roulette-title">Gira la ruleta y consigue descuentos de hasta 80% para descargar los archivos</h3>
+                <div class="roulette-container">
+                    <div class="roulette-wheel" id="roulette-wheel"></div>
+                    <div class="roulette-pointer"></div>
+                    <button class="spin-button" id="spin-button">GIRAR</button>
+                </div>
+            `;
+            
+            // Substituir o botão pela roleta
+            payButton.parentNode.replaceChild(rouletteSection, payButton);
+            
+            // Criar modal de desconto se não existir
+            if (!document.getElementById('discount-modal')) {
+                const modal = document.createElement('div');
+                modal.className = 'discount-modal hidden';
+                modal.id = 'discount-modal';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <h2>¡80% DE DESCUENTO APLICADO!</h2>
+                        <div class="price-calculation">
+                            <div class="original-price">Precio original: <span class="crossed">95$</span></div>
+                            <div class="discount-price">Con descuento: <span class="highlight">19$</span></div>
+                            <div class="savings">Ahorras: <span class="save-amount">76$</span></div>
+                        </div>
+                        <button class="download-btn" onclick="window.location.href='https://go.hotmart.com/Q101529111T?ap=5397'">DESCARGAR ARCHIVOS AHORA</button>
+                        <div class="timer">Oferta válida por <span id="countdown">15:00</span> minutos</div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+            }
+            
+            // Atualizar referências dos elementos
+            this.wheel = document.getElementById('roulette-wheel');
+            this.spinButton = document.getElementById('spin-button');
+            this.discountModal = document.getElementById('discount-modal');
+            this.countdownElement = document.getElementById('countdown');
+            
+            console.log('Botão de pagamento substituído pela roleta');
+        }
+    }
+    
+    // Função para criar segmentos com tamanhos diferentes usando Canvas
+    createUnequalSegments() {
+        // ===== CONFIGURAÇÕES ACESSÍVEIS =====
+        const ROULETTE_CONFIG = {
+            // Tamanho da roleta
+            radius: 250,
+            canvasSize: 500,
+            
+            // Cores dos segmentos (alternando entre duas cores)
+            segmentColor1: '#ffeaca',
+            segmentColor2: '#fff5e9',
+            specialSegmentColor: '#ff6b01', // Cor do segmento 80%
+            
+            // Configurações de texto
+            fontSize: 24,
+            fontFamily: 'Arial',
+            textColor: '#333333',
+            textShadow: 'rgba(0,0,0,0.3)',
+            
+            // Bordas
+            borderColor: '#ffffff',
+            borderWidth: 2,
+            
+            // Botão girar
+            buttonColor: '#3f3b40',
+            buttonBorderColor: '#ffffff',
+            
+            // Ponteiro
+            pointerColor: 'rgba(91,76,63,255)'
+        };
+        
+        const canvas = document.createElement('canvas');
+        canvas.width = ROULETTE_CONFIG.canvasSize;
+        canvas.height = ROULETTE_CONFIG.canvasSize;
+        const ctx = canvas.getContext('2d');
+        
+        // Configuração dos segmentos - 80% tem 60% do tamanho dos outros
+        const normalAngle = 100; // Ângulo dos segmentos normais
+        const specialAngle = normalAngle * 0.6; // 60% do tamanho normal
+        
+        const segments = [
+            { text: 'SIN DESCUENTO', angle: normalAngle, color: ROULETTE_CONFIG.segmentColor1, startAngle: 0 },
+            { text: '20% DE DESCUENTO', angle: normalAngle, color: ROULETTE_CONFIG.segmentColor2, startAngle: normalAngle },
+            { text: '30% DE DESCUENTO', angle: normalAngle, color: ROULETTE_CONFIG.segmentColor1, startAngle: normalAngle * 2 },
+            { text: '80% DE DESCUENTO', angle: specialAngle, color: ROULETTE_CONFIG.specialSegmentColor, startAngle: normalAngle * 3 }
+        ];
+        
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        
+        // Desenhar cada segmento
+        segments.forEach((segment, index) => {
+            const startAngle = (segment.startAngle * Math.PI) / 180;
+            const endAngle = ((segment.startAngle + segment.angle) * Math.PI) / 180;
+            
+            // Desenhar segmento
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, ROULETTE_CONFIG.radius, startAngle, endAngle);
+            ctx.closePath();
+            
+            // Cor sólida do segmento
+            ctx.fillStyle = segment.color;
+            ctx.fill();
+            
+            // Borda do segmento
+            ctx.strokeStyle = ROULETTE_CONFIG.borderColor;
+            ctx.lineWidth = ROULETTE_CONFIG.borderWidth;
+            ctx.stroke();
+            
+            // Adicionar texto
+            const textAngle = startAngle + (endAngle - startAngle) / 2;
+            const textRadius = ROULETTE_CONFIG.radius * 0.7;
+            const textX = centerX + Math.cos(textAngle) * textRadius;
+            const textY = centerY + Math.sin(textAngle) * textRadius;
+            
+            ctx.save();
+            ctx.translate(textX, textY);
+            ctx.rotate(textAngle + Math.PI / 2);
+            
+            ctx.fillStyle = ROULETTE_CONFIG.textColor;
+            ctx.font = `bold ${ROULETTE_CONFIG.fontSize}px ${ROULETTE_CONFIG.fontFamily}`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.shadowColor = ROULETTE_CONFIG.textShadow;
+            ctx.shadowBlur = 2;
+            ctx.shadowOffsetX = 1;
+            ctx.shadowOffsetY = 1;
+            
+            // Quebrar texto em linhas se necessário com line-height aumentado
+            const words = segment.text.split(' ');
+            const lineHeight = ROULETTE_CONFIG.fontSize * 1.4; // Line-height de 1.4x o tamanho da fonte
+            if (words.length > 2) {
+                ctx.fillText(words[0] + ' ' + words[1], 0, -lineHeight/2);
+                ctx.fillText(words[2], 0, lineHeight/2);
+            } else {
+                ctx.fillText(segment.text, 0, 0);
+            }
+            
+            ctx.restore();
+        });
+        
+        // Substituir a roda HTML pelo canvas
+        const wheel = this.wheel;
+        wheel.innerHTML = '';
+        wheel.appendChild(canvas);
+        
+        // Aplicar estilo circular ao canvas
+        canvas.style.borderRadius = '50%';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.className = 'roulette-canvas';
+        
+        console.log('Segmentos desiguais criados com Canvas');
+    }
+    
+    // Função auxiliar para clarear cores
+    lightenColor(color, percent) {
+        const num = parseInt(color.replace('#', ''), 16);
+        const amt = Math.round(2.55 * percent);
+        const R = (num >> 16) + amt;
+        const G = (num >> 8 & 0x00FF) + amt;
+        const B = (num & 0x0000FF) + amt;
+        return '#' + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+            (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+            (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+    }
+    
+    // Função para garantir parada no segmento pequeno de 80%
+    spinToWin() {
+        if (this.isSpinning) return;
+        
+        this.isSpinning = true;
+        this.spinButton.disabled = true;
+        this.spinButton.textContent = 'GIRANDO...';
+        
+        // Calcular ângulo para parar exatamente no segmento 80% (menor que os outros)
+        // Segmento 80% está posicionado entre 300° e 360° (60° de tamanho - 60% dos outros)
+        // Para centralizar no segmento, vamos para 330° (300° + 30°)
+        // Como o ponteiro está no topo, precisamos ajustar para que pare no centro: 330°
+        const targetAngle = 300;
+        const spins = 6; // Múltiplas voltas completas para efeito dramático
+        const totalRotation = (spins * 360) + targetAngle;
+        
+        // Aplicar animação de rotação
+        this.wheel.style.transition = 'transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)';
+        this.wheel.style.transform = `rotate(${totalRotation}deg)`;
+        
+        console.log(`Girando para ângulo: ${targetAngle}°, Rotação total: ${totalRotation}°`);
+        
+        // Aguardar fim da animação (4 segundos)
+        setTimeout(() => {
+            this.highlightWinningSegment();
+        }, 4000);
+    }
+    
+    // Destacar segmento vencedor com efeito de glow
+    highlightWinningSegment() {
+        const canvas = this.wheel.querySelector('.roulette-canvas');
+        if (canvas) {
+            // Aplicar efeito de glow laranja no segmento 80%
+            canvas.style.filter = 'drop-shadow(0 0 30px #ff6b01) drop-shadow(0 0 60px #ff6b01)';
+            canvas.style.animation = 'glowPulse 0.8s ease-in-out infinite alternate';
+            
+            // Remover efeito após 3 segundos
+            setTimeout(() => {
+                canvas.style.filter = '';
+                canvas.style.animation = '';
+            }, 3000);
+        }
+        
+        // Mostrar mensagem de felicitações
+        const congratsMessage = document.createElement('div');
+        congratsMessage.className = 'congrats-message';
+        congratsMessage.innerHTML = '¡Felicidades! Obtuviste el máximo descuento';
+        congratsMessage.classList.add('congrats-show');
+        
+        document.body.appendChild(congratsMessage);
+        
+        // Remover mensagem e mostrar popup após 2 segundos
+        setTimeout(() => {
+            congratsMessage.remove();
+            this.showDiscountPopup();
+        }, 2000);
+    }
+    
+    // Calcular desconto dinamicamente
+    calculateDiscount() {
+        const discountedPrice = this.originalPrice * (1 - this.discountPercent / 100);
+        const savings = this.originalPrice - discountedPrice;
+        
+        return {
+            original: this.originalPrice.toFixed(2),
+            discounted: discountedPrice.toFixed(2),
+            savings: savings.toFixed(2)
+        };
+    }
+    
+    // Mostrar popup com cálculo de desconto
+    showDiscountPopup() {
+        const prices = this.calculateDiscount();
+        
+        // Atualizar valores no popup
+        document.querySelector('.crossed').textContent = `$${prices.original}`;
+        document.querySelector('.highlight').textContent = `$${prices.discounted}`;
+        document.querySelector('.save-amount').textContent = `$${prices.savings}`;
+        
+        // Mostrar modal com animação
+        this.discountModal.classList.remove('hidden');
+        this.discountModal.style.animation = 'slideDown 0.5s ease-out, bounce 0.3s ease-out 0.5s';
+        
+        // Iniciar countdown
+        this.startCountdown();
+    }
+    
+    // Timer falso de 15 minutos
+    startCountdown() {
+        let timeLeft = 15 * 60; // 15 minutos em segundos
+        
+        const updateTimer = () => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            this.countdownElement.textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            }
+        };
+        
+        updateTimer();
+    }
+}
+
+// Adicionar estilos CSS dinâmicos para a nova roleta
+const style = document.createElement('style');
+style.textContent = `
+    /* Título da roleta */
+    .roulette-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1f2937;
+        text-align: center;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    /* Container da roleta */
+    .roulette-container {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Roda da roleta */
+    .roulette-wheel {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 8px solid #374151;
+        overflow: hidden;
+        transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    
+    /* Segmentos da roleta */
+    .segment {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        transform-origin: 100% 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        text-align: center;
+        line-height: 1.2;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    
+    /* Segmento vencedor destacado */
+    .winner-segment {
+        box-shadow: 0 0 15px rgba(249, 115, 22, 0.6);
+    }
+    
+    /* Ponteiro da roleta */
+    .roulette-pointer {
+        position: absolute;
+        top: 10px; /* Mais próximo da roleta */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 25px solid rgba(91,76,63,255); /* Cor solicitada */
+        z-index: 10;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    
+    /* Botão de girar */
+    .spin-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #3f3b40; /* Cor solicitada */
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        border: 4px solid #ffffff; /* Borda branca solicitada */
+        cursor: pointer;
+        z-index: 20;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    
+    .spin-button:hover {
+        background: #4a464b; /* Tom ligeiramente mais claro no hover */
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+    
+    .spin-button:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+    
+    /* Modal de desconto */
+    .discount-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+    
+    .discount-modal.hidden {
+        display: none;
+    }
+    
+    .modal-content {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .modal-content h2 {
+        color: #f97316;
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    
+    /* Cálculo de preços */
+    .price-calculation {
+        margin: 20px 0;
+        padding: 15px;
+        background: #f9fafb;
+        border-radius: 10px;
+    }
+    
+    .original-price {
+        font-size: 16px;
+        color: #6b7280;
+        margin-bottom: 8px;
+    }
+    
+    .crossed {
+        text-decoration: line-through;
+        color: #ef4444;
+    }
+    
+    .discount-price {
+        font-size: 18px;
+        color: #1f2937;
+        margin-bottom: 8px;
+    }
+    
+    .highlight {
+        color: #059669;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    .savings {
+        font-size: 16px;
+        color: #1f2937;
+    }
+    
+    .save-amount {
+        color: #f97316;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    /* Botão de download */
+    .download-btn {
+        background: linear-gradient(45deg, #f97316, #fb923c);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 20px 0;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+    }
+    
+    .download-btn:hover {
+        background: linear-gradient(45deg, #ea580c, #f97316);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(249, 115, 22, 0.4);
+    }
+    
+    /* Timer */
+    .timer {
+        color: #dc2626;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+    
+    #countdown {
+        font-size: 16px;
+        background: #fef2f2;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid #fecaca;
+    }
+    
+    /* Animações */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes pulse {
+        from { transform: scale(1); box-shadow: 0 0 15px rgba(249, 115, 22, 0.6); }
+        to { transform: scale(1.05); box-shadow: 0 0 25px rgba(249, 115, 22, 1); }
+    }
+    
+    @keyframes slideDown {
+        from { transform: translateY(-100px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+    }
+    
+    @keyframes glowPulse {
+        0% {
+            filter: drop-shadow(0 0 10px #ff6b35) drop-shadow(0 0 20px #ff6b35) drop-shadow(0 0 30px #ff6b35);
+        }
+        50% {
+            filter: drop-shadow(0 0 20px #ff6b35) drop-shadow(0 0 30px #ff6b35) drop-shadow(0 0 40px #ff6b35);
+        }
+        100% {
+            filter: drop-shadow(0 0 10px #ff6b35) drop-shadow(0 0 20px #ff6b35) drop-shadow(0 0 30px #ff6b35);
+        }
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .roulette-container {
+            width: 240px;
+            height: 240px;
+        }
+        
+        .roulette-wheel {
+            width: 210px;
+            height: 210px;
+        }
+        
+        .spin-button {
+            width: 70px;
+            height: 70px;
+            font-size: 12px;
+        }
+        
+        .segment {
+            font-size: 10px;
+        }
+        
+        .roulette-title {
+            font-size: 16px;
+        }
+        
+        .modal-content {
+            padding: 20px;
+        }
+        
+        .modal-content h2 {
+            font-size: 20px;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Inicializar a roleta quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', () => {
+    new TemuRoulette();
+});
+
+// Fallback para garantir que funcione mesmo se o DOMContentLoaded já passou
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        new TemuRoulette();
+    });
+} else {
+    new TemuRoulette();
+}
+</script>
 	
+
 
 </body></html>
