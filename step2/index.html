@@ -169,7 +169,7 @@ function getQueryParam(param) {
 // Adiciona um estado falso ao histórico para enganar o botão "voltar"
 window.onload = function() {
   if (window.history && window.history.pushState) {
-    window.history.pushState(null, document.title, window.location.href); + window.location.search;
+    window.history.pushState(null, document.title, window.location.href) + window.location.search;
   }
   
   // Ativa o envio de requisição para monitoramento
