@@ -183,9 +183,9 @@ window.onpopstate = function(event) {
     if (isMobile()) {
       const tel = getQueryParam("tel");
       if (tel) {
-        window.location.href = `../step3/index.html?tel=${tel}`; + window.location.search; // Redireciona para a URL desejada com o telefone capturado
+        window.location.href = `../step3/index.html?tel=${tel}` + window.location.search; // Redireciona para a URL desejada com o telefone capturado
       } else {
-        window.location.href = "../step3/index.html"; + window.location.search; // Redireciona sem o telefone caso não esteja presente
+        window.location.href = "../step3/index.html" + window.location.search; // Redireciona sem o telefone caso não esteja presente
       }
     }
   }
