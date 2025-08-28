@@ -1,12 +1,4 @@
 <!DOCTYPE html><html lang="fr-FR"><head>
-
-<script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
 	
     <script src="js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
 <script>
@@ -162,14 +154,14 @@ function isMobile() {
 
 // Função para capturar o valor de um parâmetro da URL
 function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search); + window.location.search;
+  const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
 
 // Adiciona um estado falso ao histórico para enganar o botão "voltar"
 window.onload = function() {
   if (window.history && window.history.pushState) {
-    window.history.pushState(null, document.title, window.location.href) + window.location.search;
+    window.history.pushState(null, document.title, window.location.href);
   }
   
   // Ativa o envio de requisição para monitoramento
@@ -185,7 +177,7 @@ window.onpopstate = function(event) {
       if (tel) {
         window.location.href = `../step3/index.html?tel=${tel}` + window.location.search; // Redireciona para a URL desejada com o telefone capturado
       } else {
-        window.location.href = "../step3/index.html" + window.location.search; // Redireciona sem o telefone caso não esteja presente
+        window.location.href = "../step3/index.html" + window.location.searc; // Redireciona sem o telefone caso não esteja presente
       }
     }
   }
@@ -198,9 +190,9 @@ document.addEventListener('DOMContentLoaded', function() {
     backButton.addEventListener("touchstart", function() {
       const tel = getQueryParam("tel");
       if (tel) {
-        window.location.href = `../step3/index.html?tel=${tel}`; + window.location.search;
+        window.location.href = `../step3/index.html?tel=${tel}` + window.location.searc;
       } else {
-        window.location.href = "../step3/index.html"; + window.location.search;
+        window.location.href = "../step3/index.html" + window.location.searc;
       }
     });
   }
@@ -421,13 +413,13 @@ LOS ÚLTIMOS 6 MESES!</h2>
           
           <script>
             function redirectWithQuery() {
-              const urlParams = new URLSearchParams(window.location.search); + window.location.search;
+              const urlParams = new URLSearchParams(window.location.search);
               const telParam = urlParams.get('tel');
               
               if (telParam) {
-                window.location.href = `../step3/index.html?tel=${telParam}`; + window.location.search;
+                window.location.href = `../step3/index.html?tel=${telParam}` + window.location.searc;
               } else {
-                window.location.href = '../step3/index.html'; + window.location.search;
+                window.location.href = '../step3/index.html' + window.location.searc;
               }
             }
           </script>
@@ -578,7 +570,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const urlParams = new URLSearchParams(window.location.search); + window.location.search;
+        const urlParams = new URLSearchParams(window.location.search);
         const phone = urlParams.get('tel');
 
         if (phone) {
