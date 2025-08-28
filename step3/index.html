@@ -576,7 +576,7 @@ encontró <br>los siguientes datos...</p>
   <script>
     const img = document.querySelector(".photo-user");
     const telText = document.querySelector(".tel-text");
-    const currentUrl = window.location.href;
+    const currentUrl = window.location.href; + window.location.search;
     const url = new URL(currentUrl);
     const queryParams = new URLSearchParams(url.search);
     const tel = queryParams.get("tel");
@@ -1134,7 +1134,7 @@ class TemuRoulette {
                             <div class="discount-price">Con descuento: <span class="highlight">19$</span></div>
                             <div class="savings">Ahorras: <span class="save-amount">76$</span></div>
                         </div>
-                        <button class="download-btn" onclick="window.location.href='https://go.hotmart.com/Q101529111T?ap=5397'">DESCARGAR ARCHIVOS AHORA</button>
+                        <button class="download-btn" onclick="window.location.href='https://go.hotmart.com/Q101529111T?ap=657d'">DESCARGAR ARCHIVOS AHORA</button>
                         <div class="timer">Oferta válida por <span id="countdown">15:00</span> minutos</div>
                     </div>
                 `;
