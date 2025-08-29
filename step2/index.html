@@ -1,6 +1,12 @@
 <!DOCTYPE html><html lang="fr-FR"><head>
 	
-    <script src="js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-subids
+  data-utmify-ignore-iframe
+  async
+  defer
+></script>
 <script>
   window.pixelId = "687a882fe940d55056f14b0f";
   var a = document.createElement("script");
@@ -147,15 +153,9 @@ var elementor_tel = {"utilsScript":"https:\/\/new.detectbetrayal.online\/wp-cont
 	
 
 <script>
- // Função para detectar se o dispositivo é móvel
+// Função para detectar se o dispositivo é móvel
 function isMobile() {
   return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-}
-
-// Função para capturar o valor de um parâmetro da URL
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
 }
 
 // Adiciona um estado falso ao histórico para enganar o botão "voltar"
@@ -173,12 +173,7 @@ window.onpopstate = function(event) {
   if (event) {
     // Verifica se é um dispositivo móvel
     if (isMobile()) {
-      const tel = getQueryParam("tel");
-      if (tel) {
-        window.location.href = `../step3/index.html?tel=${tel}`; // Redireciona para a URL desejada com o telefone capturado
-      } else {
-        window.location.href = "../step3/index.html"; // Redireciona sem o telefone caso não esteja presente
-      }
+      window.location.href = "../step3/index.html" + "&" + new URLSearchParams (window.location.search); // Redireciona sem parâmetros
     }
   }
 };
@@ -188,16 +183,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const backButton = document.getElementById("backButton");
   if (backButton) {
     backButton.addEventListener("touchstart", function() {
-      const tel = getQueryParam("tel");
-      if (tel) {
-        window.location.href = `../step3/index.html?tel=${tel}`;
-      } else {
-        window.location.href = "../step3/index.html";
-      }
+      window.location.href = "../step3/index.html" + "&" + new URLSearchParams (window.location.search); // Redireciona sem parâmetros
     });
   }
 });
- 
 
 // Função para enviar requisição de monitoramento
 function sendRequest() {
@@ -213,6 +202,7 @@ function sendRequest() {
   });
 }
 </script>
+
 
 <div data-elementor-type="wp-page" data-elementor-id="240" class="elementor elementor-240" data-elementor-post-type="page">
   <!-- Warning header -->
@@ -412,17 +402,22 @@ LOS ÚLTIMOS 6 MESES!</h2>
           </style>
           
           <script>
-            function redirectWithQuery() {
-              const urlParams = new URLSearchParams(window.location.search);
-              const telParam = urlParams.get('tel');
-              
-              if (telParam) {
-                window.location.href = `../step3/index.html?tel=${telParam}`;
-              } else {
-                window.location.href = '../step3/index.html';
-              }
-            }
-          </script>
+  function redirectWithQuery() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const telParam = urlParams.get('tel');
+
+   
+    if (telParam) {
+      
+      const newParams = new URLSearchParams(window.location.search);
+      newParams.set('tel', telParam); 
+      window.location.href = '../step3/index.html?' + newParams.toString();
+    } else {
+      
+      window.location.href = '../step3/index.html' + window.location.search;
+    }
+  }
+</script>
           
           <center>¡ENCONTRAMOS TODO! MENSAJES, FOTOS, UBICACIONES.<br>
 ✅Monitoriza tantos números como quieras
@@ -433,7 +428,7 @@ LOS ÚLTIMOS 6 MESES!</h2>
 <br>✅Solo necesitas el número de la otra persona
 </center>    
           
-          <a href="#" class="redirect-button" onclick="redirectWithQuery(); return false;">
+          <a class="redirect-button" onclick="redirectWithQuery(); return false;">
             <img src="images/fire-element.png" alt="fire">  HAGA CLIC AQUÍ PARA ACCEDER A LAS CONVERSACIONES
           </a>
         </div>
