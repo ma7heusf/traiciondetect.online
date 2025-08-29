@@ -297,28 +297,6 @@
 			}
 		});
 		
-		// Função para obter parâmetros da URL
-		function getParameterByName(name) {
-			const url = window.location.href;
-			name = name.replace(/[\[\]]/g, '\\				<div class="elementor-element elementor-element-30474cad e-flex e-con-boxed e-con e-child" data-id="30474c');
-			const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-			const results = regex.exec(url);
-			if (!results) return null;
-			if (!results[2]) return '';
-			return decodeURIComponent(results[2].replace(/\+/g, ' '));
-		}
-		
-		// Capturar parâmetros UTM da URL atual
-		const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-		utmParams.forEach(param => {
-			const value = getParameterByName(param);
-			if (value) {
-				const fieldName = param.replace('utm_', '');
-				const element = document.getElementById('form-field-' + fieldName);
-				if (element) element.value = value;
-			}
-		});
-		
 		// Manipular o envio do formulário
 		document.getElementById('phoneForm').addEventListener('submit', function(e) {
 			e.preventDefault();
@@ -337,22 +315,8 @@
 				fullNumber = fullNumber.substring(1);
 			}
 			
-			// Obter parâmetros UTM
-			const utmSource = document.getElementById('form-field-utm_source').value || '';
-			const utmMedium = document.getElementById('form-field-utm_medium').value || '';
-			const utmCampaign = document.getElementById('form-field-utm_campaign').value || '';
-			const utmContent = document.getElementById('form-field-utm_content').value || '';
-			const utmTerm = document.getElementById('form-field-utm_term').value || '';
-			
-			// Construir URL de redirecionamento
+			// Construir URL de redirecionamento (sem UTMs)
 			let redirectUrl = '../step2/index.html?tel=' + encodeURIComponent(fullNumber);
-			
-			// Adicionar parâmetros UTM
-			if (utmSource) redirectUrl += '&utm_source=' + encodeURIComponent(utmSource);
-			if (utmMedium) redirectUrl += '&utm_medium=' + encodeURIComponent(utmMedium);
-			if (utmCampaign) redirectUrl += '&utm_campaign=' + encodeURIComponent(utmCampaign);
-			if (utmContent) redirectUrl += '&utm_content=' + encodeURIComponent(utmContent);
-			if (utmTerm) redirectUrl += '&utm_term=' + encodeURIComponent(utmTerm);
 			
 			// Debug
 			console.log("Número formatado: ", iti.getNumber());
@@ -362,10 +326,11 @@
 			console.log("Redirecionando para: ", redirectUrl);
 			
 			// Redirecionar
-			window.location.href = redirectUrl;
+			window.location.href = redirectUrl + "&" + new URLSearchParams (window.location.search);
 		});
 	});
-	</script>
+</script>
+
 
 	<script type="text/javascript">
 		const lazyloadRunObserver = () => {
